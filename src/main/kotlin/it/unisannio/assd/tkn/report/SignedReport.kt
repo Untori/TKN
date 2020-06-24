@@ -8,7 +8,7 @@ import java.nio.ByteOrder
 
 class SignedReport private constructor(
     val report: Report,
-    private val sign: ByteArray
+    val sign: ByteArray
 ) {
     fun verify(): Boolean = report.getVerificationKey()
         .verify(report.toByteArray(), sign)

@@ -3,6 +3,7 @@ package it.unisannio.assd.tkn.key
 import cafe.cryptography.ed25519.Ed25519PrivateKey
 import cafe.cryptography.ed25519.Ed25519PublicKey
 import cafe.cryptography.ed25519.Ed25519Signature
+import it.unisannio.assd.tkn.toHexByteArray
 import it.unisannio.assd.tkn.toHexString
 
 class ReportVerificationKey private constructor(private val key: Ed25519PublicKey) {
@@ -31,6 +32,11 @@ class ReportVerificationKey private constructor(private val key: Ed25519PublicKe
         fun createFromByteArray(bytes: ByteArray): ReportVerificationKey =
             ReportVerificationKey(
                 Ed25519PublicKey.fromByteArray(bytes)
+            )
+
+        fun createFromHexString(hexString: String): ReportVerificationKey =
+            ReportVerificationKey(
+                Ed25519PublicKey.fromByteArray(hexString.toHexByteArray())
             )
     }
 }

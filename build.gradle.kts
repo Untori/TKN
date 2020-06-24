@@ -15,8 +15,11 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    testCompile("junit", "junit", "4.12")
     implementation ("cafe.cryptography:ed25519-elisabeth:0.1.0")
+
+    testCompile("junit", "junit", "4.12")
+    testImplementation ("org.amshove.kluent:kluent:1.61")
+
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.9.1")
 }
 

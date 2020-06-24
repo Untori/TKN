@@ -3,6 +3,7 @@ package it.unisannio.assd.tkn.key
 import it.unisannio.assd.tkn.Const
 import it.unisannio.assd.tkn.report.Memo
 import it.unisannio.assd.tkn.report.Report
+import it.unisannio.assd.tkn.toHexByteArray
 import it.unisannio.assd.tkn.toHexString
 import it.unisannio.assd.tkn.toLeByteArray
 import java.security.MessageDigest
@@ -69,6 +70,12 @@ class TemporaryContactKey private constructor(
         fun createFromByteArray(bytes: ByteArray, index: Short): TemporaryContactKey =
             TemporaryContactKey(
                 bytes,
+                index
+            )
+
+        fun createFromHexString(hexString: String, index: Short): TemporaryContactKey =
+            TemporaryContactKey(
+                hexString.toHexByteArray(),
                 index
             )
     }

@@ -1,6 +1,5 @@
 package it.unisannio.assd.tkn
 
-import java.math.BigInteger
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
@@ -21,7 +20,15 @@ fun ByteArray.toHexString(): String {
     return builder.toString()
 }
 
-fun String.toHexByteArray(): ByteArray = BigInteger(this, 16).toByteArray()
+fun String.toHexByteArray(): ByteArray {
+    val b = ByteArray(this.length / 2)
+    for (i in b.indices) {
+        val index = i * 2
+        val v: Int = this.substring(index, index + 2).toInt(16)
+        b[i] = v.toByte()
+    }
+    return b
+}
 
 fun ByteBuffer.read(n: Int): ByteArray {
     val bytes = ByteArray(n)

@@ -4,6 +4,7 @@ import cafe.cryptography.ed25519.Ed25519PrivateKey
 import cafe.cryptography.ed25519.Ed25519PublicKey
 import it.unisannio.assd.tkn.Const
 import it.unisannio.assd.tkn.toHexByteArray
+import it.unisannio.assd.tkn.toHexString
 import java.security.MessageDigest
 import java.security.SecureRandom
 
@@ -31,6 +32,8 @@ class ReportAuthorizationKey private constructor(private val key: Ed25519Private
         ).toByteArray()
 
     fun toByteArray(): ByteArray = key.toByteArray()
+
+    fun toHexString() = toByteArray().toHexString()
 
     companion object {
         fun createFromByteArray(bytes: ByteArray): ReportAuthorizationKey =

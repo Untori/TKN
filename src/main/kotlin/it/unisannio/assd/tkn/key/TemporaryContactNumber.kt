@@ -2,7 +2,7 @@ package it.unisannio.assd.tkn.key
 
 import it.unisannio.assd.tkn.toHexString
 import java.nio.ByteBuffer
-import java.util.*
+import java.util.UUID
 
 class TemporaryContactNumber(
     private val number: ByteArray,

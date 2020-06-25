@@ -9,6 +9,21 @@ steps:
     path: /root/.gradle
   commands:
   - ./gradlew check
+- name: publish
+  image: java:openjdk-8
+  volumes:
+  - name: gradle
+    path: /root/.gradle
+  environment:
+    BINTRAY_KEY:
+      from_secret: bintray-key
+    BINTRAY_USER:
+      from_secret: bintray-user
+  commands:
+  - ./gradlew bintrayUpload -Pbintray.key=$BINTRAY_KEY -Pbintray.user=$BINTRAY_USER
+  when:
+    event:
+    - tag
 
 volumes:
 - name: gradle

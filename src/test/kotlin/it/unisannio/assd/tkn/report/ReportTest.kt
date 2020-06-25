@@ -30,6 +30,41 @@ class ReportTest {
     }
 
     @Test
+    fun generateContactNumbers() {
+        val report = Report.readReportFromByteArray(
+            TestConst.REPORT_MESSAGE.toHexByteArray()
+        )
+
+        report.generateContactNumbers()
+            .take(2).map { it.toHexString() } `should be equal to` listOf(
+            TestConst.TCN_2,
+            TestConst.TCN_3
+        )
+
+    }
+
+    @Test
+    fun toReportData() {
+        val report = Report.readReportFromByteArray(
+            TestConst.REPORT_MESSAGE.toHexByteArray()
+        )
+
+        val reportData = report.toReportData()
+
+        reportData.rvk
+            .toHexString() `should be equal to` TestConst.PUBLIC_KEY_STRING_HEX
+
+        reportData.tck
+            .toHexString() `should be equal to` TestConst.TCK_1
+
+        reportData.from `should be equal to` TestConst.REPORT_FROM
+
+        reportData.until `should be equal to` TestConst.REPORT_UNTIL
+
+        reportData.memo `should be equal to` TestConst.REPORT_MEMO
+    }
+
+    @Test
     fun getVerificationKey() {
         val report = Report.readReportFromByteArray(
             TestConst.REPORT_MESSAGE.toHexByteArray()

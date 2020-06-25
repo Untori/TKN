@@ -4,6 +4,7 @@ import it.unisannio.assd.tkn.Const
 import it.unisannio.assd.tkn.key.ReportAuthorizationKey
 import it.unisannio.assd.tkn.key.ReportVerificationKey
 import it.unisannio.assd.tkn.key.TemporaryContactKey
+import it.unisannio.assd.tkn.key.TemporaryContactNumber
 import it.unisannio.assd.tkn.read
 import it.unisannio.assd.tkn.toHexString
 import java.nio.ByteBuffer
@@ -18,6 +19,13 @@ class Report private constructor(private val report: ByteArray) {
         SignedReport.createFromReport(
             this,
             rak
+        )
+
+    fun generateContactNumbers(): List<TemporaryContactNumber> = reportData.rvk
+        .contactNumbersBetween(
+            reportData.tck,
+            reportData.from,
+            reportData.until
         )
 
     fun getVerificationKey(): ReportVerificationKey = reportData.rvk

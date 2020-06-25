@@ -17,4 +17,7 @@ object TestConst {
             "bec8be3a8add45ce77897b1e7cb1906b5cff1097d3cb142fd9d002000a00000c73796d70746f6d2064617461"
     const val REPORT_SIGN = "31078ec5367b67a8c793b740626d81ba904789363137b5a313419c0f50b180d8226ecc984bf073ff" +
             "89cbd9c88fea06bda1f0f368b0e7e88bbe68f15574482904"
+    const val REPORT_MEMO = "symptom data"
+    const val REPORT_FROM = 2.toShort()
+    const val REPORT_UNTIL = 10.toShort()
 }

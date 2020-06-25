@@ -1,0 +1,16 @@
+kind: pipeline
+name: default
+
+steps:
+- name: test
+  image: java:openjdk-8
+  volumes:
+  - name: gradle
+    path: /root/.gradle
+  commands:
+  - ./gradlew check
+
+volumes:
+- name: gradle
+  host:
+    path: /home/drone/.gradle

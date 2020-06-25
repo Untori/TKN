@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "it.unisannio.assd.untori"
-version = "0.0.1-alpha"
+version = "0.0.1-alpha-2"
 
 repositories {
     mavenCentral()
@@ -67,7 +67,7 @@ bintray {
         setLicenses("MIT")
         desc = description
 
-        version.name = "0.0.1-alpha"
+        version.name = "0.0.1-alpha-2"
     }
 
 }

@@ -10,7 +10,7 @@ import java.security.MessageDigest
 
 class TemporaryContactKey private constructor(
     private val key: ByteArray,
-    private val index: Short
+    val index: Short
 ) {
     fun nextTemporaryContactKey(rvk: ReportVerificationKey): TemporaryContactKey {
         val hmac = MessageDigest.getInstance("SHA-256").apply {

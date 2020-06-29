@@ -10,6 +10,8 @@ class TemporaryContactNumber(
 ) {
     fun toHexString() = number.toHexString()
 
+    override fun toString(): String = toUUID().toString()
+
     fun toUUID(): UUID {
         val byteBuffer = ByteBuffer.wrap(number)
         val high = byteBuffer.long

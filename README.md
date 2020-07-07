@@ -12,7 +12,7 @@ A Kotlin implementation of the [TCN](https://github.com/TCNCoalition/TCN) protoc
 ## Installation
 
 1. Add maven repository `https://dl.bintray.com/untori/untori`
-2. Add TKN dependence `it.unisannio.assd.untori:{version}`
+2. Add TKN dependence `it.unisannio.assd.untori:tkn:{version}`
 
 ## Authors
 

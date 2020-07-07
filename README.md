@@ -1,7 +1,8 @@
 # TKN
 
 
-[![Build Status](https://ci.norangeb.it/api/badges/norangebit/TKN/status.svg)](https://ci.norangeb.it/norangebit/TKN)
+
+[![Build Status](https://ci.norangeb.it/api/badges/Untori/TKN/status.svg)](https://ci.norangeb.it/Untori/TKN)
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT)
 [![Bintray](https://img.shields.io/bintray/v/untori/untori/TKN)](https://bintray.com/untori/untori/TKN)
 

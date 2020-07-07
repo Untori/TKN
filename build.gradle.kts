@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "it.unisannio.assd.untori"
-version = "0.0.1-alpha-3"
+version = "0.0.1-beta-1"
 
 repositories {
     mavenCentral()
@@ -39,7 +39,7 @@ publishing {
             pom {
                 name.set(project.name)
                 description.set("A Kotlin implementation of the TCN protocol.")
-                url.set("https://git.norangeb.it/norangebit/TKN")
+                url.set("https://git.norangeb.it/Untori/TKN")
                 licenses {
                     license {
                         name.set("The MIT License")
@@ -62,12 +62,12 @@ bintray {
         repo = "untori"
         name = "TKN"
         userOrg = "untori"
-        vcsUrl = "https://git.norangeb.it/norangebit/TKN"
+        vcsUrl = "https://git.norangeb.it/Untori/TKN"
         description = "A Kotlin implementation of the TCN protocol."
         setLicenses("MIT")
         desc = description
 
-        version.name = "0.0.1-alpha-3"
+        version.name = "0.0.1-beta-1"
     }
 
 }
